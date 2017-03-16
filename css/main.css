@@ -1,0 +1,312 @@
+
+/**{margin: 0;padding: 0;list-style: none;}*/
+
+/*
+**CSS Reset
+*/
+
+/** 清除内外边距 **/
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */
+th, td /* table elements 表格元素 */ {
+  margin: 0;
+  padding: 0;
+}
+
+/** 设置默认字体 **/
+body,
+button, input, select, textarea /* for ie */ {
+  font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;
+}
+/*h1, h2, h3, h4, h5, h6 { font-size: 100%; }*/
+address, cite, dfn, em, var { font-style: normal; } /* 将斜体扶正 */
+code, kbd, pre, samp { font-family: courier new, courier, monospace; } /* 统一等宽字体 */
+small { font-size: 12px; } /* 小于 12px 的中文很难阅读，让 small 正常化 */
+
+/** 重置列表元素 **/
+ul, ol { list-style: none; }
+
+/** 重置文本格式元素 **/
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+
+/** 重置表单元素 **/
+legend { color: #000; } /* for ie6 */
+fieldset, img { border: 0; } /* img 搭车：让链接里的 img 无边框 */
+button, input, select, textarea { font-size: 100%; } /* 使得表单元素在 ie 下能继承字体大小 */
+/* 注：optgroup 无法扶正 */
+
+/** 重置表格元素 **/
+table { border-collapse: collapse; border-spacing: 0; }
+
+/* 清除浮动 */
+.ks-clear:after, .clear:after {
+  content: '\20';
+  display: block;
+  height: 0;
+  clear: both;
+}
+.ks-clear, .clear {
+  *zoom: 1;
+}
+
+
+body{
+    background: lightskyblue url() 0 0 no-repeat;
+	text-align: justify;
+	word-break: break-all;
+	color: #DCDCDC;
+}
+
+#wholewrapper{
+	width: 960px;
+	margin: 0 auto;
+}
+
+#headsec{
+	height: 120px;
+	border-bottom: #DCDCDC solid 1px;
+	text-align: center;
+}
+
+
+
+h5.pagetitle{
+	position: relative;
+	top: 30px;
+	font-size: 1rem;
+}
+
+#realcontent{
+	width: 100%;
+}
+
+#realcontentMain{
+	float: left;
+	width: 75%;
+}
+
+#innertext{
+	width: 90%;
+	margin: 0 auto;
+}
+
+#slideContainer{
+	position: relative;
+	width: 999999px;
+	height: 520px;
+	margin-top: 30px;
+}
+
+#slidemask{
+	position: relative;
+	overflow: hidden;
+	width: 648px;
+	height: 500px;
+}
+
+#imgKsanaPre{
+	position: absolute;
+	float: left;
+	top: 50%;
+	margin-top: -15px;
+	height: 30px;
+	z-index: 5;
+}
+
+#imgKsanaNext{
+	position: absolute;
+	float: left;
+	top: 50%;
+	left: 598px;
+	margin-top: -15px;
+	height: 30px;
+	z-index: 5;
+}
+
+#slidemask a img{
+	display: block;
+	width: 50px;
+	opacity: 0.2;
+}
+
+#slidemask a img:hover{
+	opacity: 0.8;
+}
+
+#slidemask .slides{
+	position: absolute;
+	top: 0;
+	width: 648px;
+	height: 100%;
+}
+
+#slidemask img{
+	position: absolute;
+	display: block;
+	margin: auto;
+	width: 648px;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+article{
+	margin-top: 30px;
+	padding: 20px;
+	border: #DCDCDC solid 1px;
+}
+
+p{
+	margin-bottom: 1rem;
+	font-size: 1rem;
+	text-indent: 2rem;
+}
+
+code{
+	color: #FFC0CB;
+}
+
+ul.codeUl li{
+	text-indent: 2rem;
+}
+
+li{
+	list-style-type: none;
+}
+
+article a{
+	text-decoration: underline;
+}
+
+article img{
+	display: block;
+	margin: 0 auto;
+}
+
+article .toobig{
+	width: 100%;
+}
+
+#realcontentAside{
+	position: relative;
+	top: 30px;
+	width: 25%;
+	float: right;
+}
+
+#navbar{
+	width: 130px;
+	margin: 0 auto;
+}
+
+#navbar.fixed{
+	position: fixed;
+	width: 130px;
+	top: 30px;
+	margin-left: 55px;
+}
+
+#navbar li{
+	list-style-type: none;
+	display: block;
+	border: 1px solid #DCDCDC;
+	padding: 13px;
+	font-size: 0.875rem;
+	text-align: center;
+	-webkit-transition: background-color linear 0.4s;
+	-moz-transition: background-color linear 0.4s;
+	transition: background-color linear 0.4s;
+}
+
+#navbar a:hover, #navbar a:focus{
+	font-weight: bold;
+	color: #2F4F4F;
+}
+
+#navbar a:hover li, #navbar a:focus li{
+	background-color: #DCDCDC;
+}
+
+#navbar li.bordernone{
+	border-bottom: 0;
+}
+
+#toTop{
+	position: fixed;
+	height: 50px;
+	bottom: 50px;
+	margin-left: 95px;
+	visibility: hidden;
+	pointer-events: none;
+}
+
+#toTop:hover{
+	cursor: pointer;
+}
+
+#toTop img{
+	display: block;
+	margin: 0 auto;
+	width: 50px;
+	height: 50px;
+}
+
+#banner{
+	width: 960px;
+	height: 40px;
+	margin: 10px auto 0 auto;
+	border-top: #DCDCDC solid 1px;
+}
+
+#bannerwrapper{
+	width: 180px;
+	height: 21px;
+	margin: 10px auto;
+}
+
+#bannerwrapper span{
+	display: inline-block;
+	height: 21px;
+}
+
+#bannerwrapper span img{
+	width: 30px;
+	height: 21px;
+}
+
+
+#spanright{
+	position: relative;
+	float: right;
+	bottom: 3px;
+	height: 19px;
+}
+
+#spanright:hover a, #spanright:focus a{
+	color: red;
+}
+
+
+.clearfix:after{
+	display: block;
+	height: 0;
+	content: " ";
+	visibility: hidden;
+	clear:both;
+}
+
+a{
+	text-decoration: none;
+	color: #DCDCDC;
+	-webkit-transition:color linear 0.4s;
+	-moz-transition:color linear 0.4s;
+	transition:color linear 0.4s;
+}
+
+/*Poem page*/
+#poem article li{padding-left:3rem; list-style-type:none; color:#FFDA89; line-height: 3;}
