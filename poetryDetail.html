@@ -33,8 +33,8 @@
       <div class="container">
         <nav class="blog-nav">
           <a class="blog-nav-item" href="index.html">Home</a>
-          <a class="blog-nav-item active" href="#">Poem</a>
-          <a class="blog-nav-item" href="ancient-poetry.html">Ancient poetry</a>
+          <a class="blog-nav-item" href="poem.html">Poem</a>
+          <a class="blog-nav-item active" href="ancient-poetry.html">Ancient poetry</a>
           <a class="blog-nav-item" href="chatroom.html">Chat room</a>
           <a class="blog-nav-item" href="message-board.html">Message board</a>
         </nav>
@@ -49,13 +49,15 @@
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
         <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
       </ol>
       <div class="carousel-inner" role="listbox">
         <div class="item active">
           <!--<img class="first-slide" src="##" alt="First slide">-->
           <div class="container">
             <div class="carousel-caption">
-              <h3>故乡的歌是一支清远的笛</h3>
+              <h3>弱冠弄柔翰，卓荦观群书。</h3>
+              <p class="text-right">《咏史▪其一》</p>
             </div>
           </div>
         </div>
@@ -63,7 +65,8 @@
           <!--<img class="second-slide" src="##" alt="Second slide">-->
           <div class="container">
             <div class="carousel-caption">
-              <h3>与其在悬崖上展览千年,<br/>不如在爱人肩头痛哭一晚</h3>
+              <h3>夜阑更秉烛，相对如梦寐。</h3>
+              <p class="text-right">《羌村▪其一》</p>
             </div>
           </div>
         </div>
@@ -71,10 +74,21 @@
           <!--<img class="third-slide" src="##" alt="Third slide">-->
           <div class="container">
             <div class="carousel-caption">
-              <h3>我并不是立意要错过,<br>可是我 一直都在这样做</h3>
+              <h3>草树知春不久归，百般红紫斗芳菲。</h3>
+              <p class="text-right">《晚春》</p>
+            </div>
+          </div>
+        </div>  
+        <div class="item">
+          <!--<img class="fourth-slide" src="##" alt="Fourth slide">-->
+          <div class="container">
+            <div class="carousel-caption">
+              <h3>执子之手，与子偕老。</h3>
+              <p class="text-right">《遵大路》</p>
             </div>
           </div>
         </div>
+
       </div>
       <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -92,30 +106,23 @@
         <p class="lead blog-description">愿历尽千帆，归来似少年</p>
       </div>-->
     <div class="container">
-      <ul class="list-group" id="poems">
-        <!--<li class="list-group-item" data-toggle="modal" data-target="#myModal" data-detail="内容"><h4>感谢（让我怎样感谢你）</h4><span>汪国真</span></li>
-        <li class="list-group-item" data-toggle="modal" data-target="#myModal" ><h4>神女峰</h4><span>舒婷</span></li>
-        <li class="list-group-item" data-toggle="modal" data-target="#myModal"><h4>远和近</h4><span>顾城</span></li>
-        <li class="list-group-item" data-toggle="modal" data-target="#myModal"><h4>我喜欢你是寂静的</h4><span>聂鲁达</span></li>-->
+      <input type="text" class="search-ipt" >
+      <button type="button" class="btn btn-info search-btn">搜索</button>
+    </div>
+
+    <div id="detail" class="container">
+      
+    </div>
+
+    <div class="container">
+      <ul class="list-group">
+        <li class="list-group-item"><h4>宣城见杜鹃花</h4><span>李白</span></li>
+        <li class="list-group-item"><h4>更漏子</h4><span>晏几道</span></li>
+        <li class="list-group-item"><h4>病中感怀</h4><span>李煜</span></li>
+        <li class="list-group-item"><h4>长相思▪山一程</h4><span>纳兰性德</span></li>
+        <li class="list-group-item"><h4>渔家傲▪天接云涛连晓雾</h4><span>李清照</span></li>
       </ul>
     </div>
-
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog">
-        <div class="modal-content" role="document">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-          </div>
-          <div class="modal-body">
-            <p>
-
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
 
     <footer class="blog-footer">
       <p><img class="email" src="images/email_32px.png" alt="Email Icon"><a href="mailto:hua20130320@qq.com">hua20130320@qq.com</a></p>
@@ -126,11 +133,42 @@
 
 
 
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/jquery3.1.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/poem.js"></script>
+    <script src="js/poetry.js"></script>
+    <script>
+    $(function() {
+      var detailUrl = 'http://api.avatardata.cn/TangShiSongCi/LookUp?key=0cfa57b9295a40708f342aa4b504d302&id=';
+      detailUrl += sessionStorage.poetryId;
+
+      $.ajax({
+        url: detailUrl,
+        type: "GET",
+        success: function(data) {
+          console.log(data);
+          var result = data.result;
+          var title = result.biaoti;
+          var author = result.zuozhe;
+          var info = result.neirong.replace(/\n/g,'<br>');
+          console.log(info);
+          console.log(title);
+          console.log(author);
+          // $('#detail').get(0).innerHTML = data.result.neirong;
+          // $('#detail').html(info);
+          var str = '';
+          str += '<h3>'+title+'</h3><p>'+author+'</p>';
+          str += '<p>'+info+'</p>';
+          console.log(str);
+          $('#detail').append(str);
+        }
+      })
+        
+    })
+    </script>
+
   </body>
 </html>
